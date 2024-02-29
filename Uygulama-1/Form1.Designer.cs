@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(randevuTakip));
             this.randevuPanel = new System.Windows.Forms.Panel();
+            this.linkedinBtn = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.githubProfile = new System.Windows.Forms.LinkLabel();
+            this.github = new System.Windows.Forms.PictureBox();
             this.tümVeriBtn = new System.Windows.Forms.Button();
             this.araBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,14 +55,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.githubProfile = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.github = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.randevuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.github)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // randevuPanel
@@ -67,7 +67,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.randevuPanel.AutoSize = true;
             this.randevuPanel.BackColor = System.Drawing.Color.Azure;
-            this.randevuPanel.Controls.Add(this.linkLabel1);
+            this.randevuPanel.Controls.Add(this.linkedinBtn);
             this.randevuPanel.Controls.Add(this.pictureBox1);
             this.randevuPanel.Controls.Add(this.githubProfile);
             this.randevuPanel.Controls.Add(this.github);
@@ -93,8 +93,56 @@
             this.randevuPanel.ForeColor = System.Drawing.Color.DarkMagenta;
             this.randevuPanel.Location = new System.Drawing.Point(31, 42);
             this.randevuPanel.Name = "randevuPanel";
-            this.randevuPanel.Size = new System.Drawing.Size(1197, 239);
+            this.randevuPanel.Size = new System.Drawing.Size(1675, 239);
             this.randevuPanel.TabIndex = 1;
+            // 
+            // linkedinBtn
+            // 
+            this.linkedinBtn.AutoSize = true;
+            this.linkedinBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.linkedinBtn.DisabledLinkColor = System.Drawing.Color.White;
+            this.linkedinBtn.LinkColor = System.Drawing.Color.Black;
+            this.linkedinBtn.Location = new System.Drawing.Point(1137, 129);
+            this.linkedinBtn.Name = "linkedinBtn";
+            this.linkedinBtn.Size = new System.Drawing.Size(57, 16);
+            this.linkedinBtn.TabIndex = 23;
+            this.linkedinBtn.TabStop = true;
+            this.linkedinBtn.Text = "LinkedIn";
+            this.linkedinBtn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Uygulama_1.Properties.Resources.linkedin;
+            this.pictureBox1.Location = new System.Drawing.Point(1098, 122);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
+            // githubProfile
+            // 
+            this.githubProfile.AutoSize = true;
+            this.githubProfile.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.githubProfile.DisabledLinkColor = System.Drawing.Color.White;
+            this.githubProfile.LinkColor = System.Drawing.Color.Black;
+            this.githubProfile.Location = new System.Drawing.Point(1137, 82);
+            this.githubProfile.Name = "githubProfile";
+            this.githubProfile.Size = new System.Drawing.Size(51, 16);
+            this.githubProfile.TabIndex = 21;
+            this.githubProfile.TabStop = true;
+            this.githubProfile.Text = "GitHub ";
+            this.githubProfile.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubProfile_LinkClicked);
+            // 
+            // github
+            // 
+            this.github.Image = global::Uygulama_1.Properties.Resources.github;
+            this.github.Location = new System.Drawing.Point(1098, 74);
+            this.github.Name = "github";
+            this.github.Size = new System.Drawing.Size(33, 32);
+            this.github.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.github.TabIndex = 20;
+            this.github.TabStop = false;
             // 
             // tümVeriBtn
             // 
@@ -320,65 +368,17 @@
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView.Size = new System.Drawing.Size(716, 254);
+            this.dataGridView.Size = new System.Drawing.Size(1194, 307);
             this.dataGridView.TabIndex = 3;
             this.dataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEnter);
             this.dataGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_ColumnHeaderMouseClick);
-            // 
-            // githubProfile
-            // 
-            this.githubProfile.AutoSize = true;
-            this.githubProfile.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.githubProfile.DisabledLinkColor = System.Drawing.Color.White;
-            this.githubProfile.LinkColor = System.Drawing.Color.Black;
-            this.githubProfile.Location = new System.Drawing.Point(1137, 82);
-            this.githubProfile.Name = "githubProfile";
-            this.githubProfile.Size = new System.Drawing.Size(51, 16);
-            this.githubProfile.TabIndex = 21;
-            this.githubProfile.TabStop = true;
-            this.githubProfile.Text = "GitHub ";
-            this.githubProfile.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubProfile_LinkClicked);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Uygulama_1.Properties.Resources.linkedin;
-            this.pictureBox1.Location = new System.Drawing.Point(1098, 122);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
-            // 
-            // github
-            // 
-            this.github.Image = global::Uygulama_1.Properties.Resources.github;
-            this.github.Location = new System.Drawing.Point(1098, 74);
-            this.github.Name = "github";
-            this.github.Size = new System.Drawing.Size(33, 32);
-            this.github.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.github.TabIndex = 20;
-            this.github.TabStop = false;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.linkLabel1.DisabledLinkColor = System.Drawing.Color.White;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(1137, 129);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(57, 16);
-            this.linkLabel1.TabIndex = 23;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "LinkedIn";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // randevuTakip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(1260, 606);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.randevuPanel);
@@ -390,9 +390,9 @@
             this.Load += new System.EventHandler(this.randevuTakip_Load);
             this.randevuPanel.ResumeLayout(false);
             this.randevuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.github)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,7 +424,7 @@
         private System.Windows.Forms.PictureBox github;
         private System.Windows.Forms.LinkLabel githubProfile;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkedinBtn;
     }
 }
 

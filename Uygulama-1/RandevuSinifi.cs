@@ -2,6 +2,7 @@
 
 internal class Randevu
 {
+   // Randevunun özelliklerini temsil eder.
     int id;
     string ad;
     string telefon;

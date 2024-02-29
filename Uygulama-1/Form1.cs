@@ -19,51 +19,57 @@ namespace Uygulama_1
         {
             InitializeComponent();
         }
+
         Randevu randevu;
         BindingList<Randevu> list = new BindingList<Randevu>();
 
         private async void randevuTakip_Load(object sender, EventArgs e)
         {
-          
-            //Poliklinikleri ComboBox'a...
 
             String[] Poliklinikler = {"Cildiye","Dahiliye","Endokrinoloji","Enfeksiyon Hastalıkları","Fizik Tedavi",
                 "Gastroenteroloji","Genel Cerrahi","Göz Hastalıkları","Hematoloji","Kadın Hastalıkları ve Doğum",
                 "Kardiyoloji","Kulak Burun Boğaz","Nöroloji","Onkoloji","Ortopedi","Plastik Cerrahi","Psikiyatri",
                 "Radyoloji","Üroloji"};
-                  
-                 polikliniklerTxt.Items.AddRange(Poliklinikler);
 
-            list.Add(new Randevu(23425467, "Ahmet Aydın", "52154521", new DateTime(2023, 11, 23), true, "Göz"));
-            list.Add(new Randevu(54648573, "Ayşe Uysal", "54511555", new DateTime(2023, 11, 24), true, "Kulak-Burun-Boğaz"));
-            list.Add(new Randevu(34375634, "Hakan Demir", "52154521", new DateTime(2023, 11, 25), true, "Cilt"));
-            list.Add(new Randevu(44356122, "Kemal Saygın", "52154521", new DateTime(2023, 11, 27), false, "Göz"));
-            list.Add(new Randevu(54563534, "Mehmet Yılmaz", "55443322", new DateTime(2023, 11, 28), true, "Ortopedi"));
-            list.Add(new Randevu(66787876, "Fatma Kaya", "52111223", new DateTime(2023, 11, 29), true, "Dahiliye"));
-            list.Add(new Randevu(73485645, "Mustafa Arı", "53322114", new DateTime(2023, 11, 30), true, "Nöroloji"));
-            list.Add(new Randevu(85464562, "Zeynep Yıldız", "52199887", new DateTime(2023, 12, 1), true, "Kardiyoloji"));
-            list.Add(new Randevu(94569056, "Emre Çelik", "54321098", new DateTime(2023, 12, 2), false, "Gastroenteroloji"));
-            list.Add(new Randevu(14354535, "Sevil Yılmaz", "55556789", new DateTime(2023, 12, 3), true, "Göğüs Hastalıkları"));
-            list.Add(new Randevu(70345374, "Seda Akgün", "52223344", new DateTime(2023, 12, 4), true, "Dermatoloji"));
-            list.Add(new Randevu(42345436, "Kadir Toprak", "53334455", new DateTime(2023, 12, 5), false, "Üroloji"));
-            list.Add(new Randevu(64385834, "Şeyma Karadeniz", "54445566", new DateTime(2023, 12, 6), true, "Psikiyatri"));
-            list.Add(new Randevu(94368345, "Cemal Yıldırım", "55556677", new DateTime(2023, 12, 7), true, "Plastik Cerrahi"));
+
+            //Poliklinikleri ComboBox'a ekle.
+            polikliniklerTxt.Items.AddRange(Poliklinikler);
+
+            // Örnek randevuları listeye ekle
+            list.Add(new Randevu(23425467, "Berat Yeşil", "55485465", new DateTime(2024, 3, 1), true, "Ortopedi"));
+            list.Add(new Randevu(54648573, "Murat Akyurt", "54895654", new DateTime(2023, 11, 30), true, "Kulak-Burun-Boğaz"));
+            list.Add(new Randevu(34375634, "Bekir Yaman", "54654859", new DateTime(2023, 2, 16), true, "Cilt"));
+            list.Add(new Randevu(44356122, "Burak Sakman", "55569586", new DateTime(2024, 1, 18), false, "Göz"));
+            list.Add(new Randevu(54563534, "Büsra Yurt", "50565849", new DateTime(2024, 4, 15), true, "Cilt"));
+            list.Add(new Randevu(66787876, "Betül Karlı", "55487525", new DateTime(2021, 5, 19), true, "Dahiliye"));
+            list.Add(new Randevu(73485645, "Serap Geyik", "55265585", new DateTime(2023, 6, 27), true, "Kulak-Burun-Boğaz"));
+            list.Add(new Randevu(85464562, "Hasan Uzun", "53165885", new DateTime(2023, 9, 7), true, "Cilt"));
+            list.Add(new Randevu(94569056, "Diyar Tekin", "53695575", new DateTime(2023, 11, 5), false, "Gastroenteroloji"));
+            list.Add(new Randevu(14354535, "Ömer Fasıl", "55113551", new DateTime(2023, 8, 30), true, "Kulak-Burun-Boğaz"));
+            list.Add(new Randevu(70345374, "Mehmet Uzun", "53666695", new DateTime(2023, 5, 18), true, "Dermatoloji"));
+            list.Add(new Randevu(42345436, "Lale Tokatlı", "53105699", new DateTime(2023, 7, 3), false, "Üroloji"));
+            list.Add(new Randevu(64385834, "Melek Akdeniz", "54189854", new DateTime(2023, 2,21), true, "Dahiliye"));
+            list.Add(new Randevu(94368345, "Erdem Yatkın", "54298859", new DateTime(2023, 2, 23), true, "Gastroenteroloji"));
     
-            // DataGridView için otomatik boyutlandırma modunu ayarla
+            // DataGridView için otomatik boyutlandırma modunu ayarlama vs.
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            // Sütunları yeniden boyutlandırılabilir yap
 
             dataGridView.DataSource = list.ToList();
+
             foreach (DataGridViewColumn column in dataGridView.Columns)
             {
                 column.Resizable = DataGridViewTriState.True;
             }
             temizle();
+            MessageBox.Show("Randevu Kayıt Sistemine Hoşgeldiniz.");
         }
+
+        // DataGridView'de hücre seçildiğinde çalışacak
         private void dataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+                // Seçilen satırdaki verileri ilgili alanlara yerleştir
                 protokolNoTxt.Text = dataGridView.CurrentRow.Cells["id"].Value.ToString();
                 adSoyadTxt.Text = dataGridView.CurrentRow.Cells["ad"].Value.ToString();
                 telefonTxt.Text = dataGridView.CurrentRow.Cells["telefon"].Value.ToString();
@@ -88,36 +94,41 @@ namespace Uygulama_1
             DateTime tarih = tarihDt.Value;
             string poliklinik = polikliniklerTxt.Text;
 
-            // Rastgele 8 haneli bir ID oluştur
+            // Rastgele 8 haneli bir Protokol oluştur
             Random random = new Random();
             int id = random.Next(10000000, 99999999);
 
             // Yeni randevu oluştur
             Randevu yeniRandevu = new Randevu(id, ad, telefon, tarih, sigorta, poliklinik);
 
-            // Ekleme öncesinde mevcut veri kümesinde aynı id'ye sahip bir randevu var mı kontrol et
+            // Ekleme öncesinde mevcut veri kümesinde aynı protokole sahip bir randevu var mı kontrol et
             if (list.Any(r => r.Telefon == telefon && r.Ad == ad && r.Poliklinik == poliklinik))
             {
                 MessageBox.Show("Bu protokol numarasına sahip bir kayıt zaten mevcut!", "İstenilen Kayıt Eklenmedi !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                // Veri kümesine ekle
-                list.Insert(0, yeniRandevu); // En üste eklemek için Insert kullanılır
+                if (list.Any(r =>r.Telefon == null || r.Ad == ad || r.Poliklinik == null))
+                {
+                    MessageBox.Show("Lütfen boş alan bırakmayınız.");
+                }
+                else
+                {
+                    // Veri kümesine ekle en üste gelmesi için insert
+                    list.Insert(0, yeniRandevu); 
 
-                dataGridView.DataSource = list.ToList();
+                    dataGridView.DataSource = list.ToList();
 
-                // Eklenen veriyi seç
-                dataGridView.Rows[0].Selected = true;
+                    // Eklenen veriyi seçili yap
+                    dataGridView.Rows[0].Selected = true;
 
-                MessageBox.Show(ad + " isimli kişinin kaydı eklenmiştir!");
+                    MessageBox.Show(ad + " isimli kişinin kaydı eklenmiştir!");
 
-                temizle();
+                    temizle();
+                }
+               
             }
         }
-
-
-
         private void silBtn_Click(object sender, EventArgs e)
         {
             if (dataGridView.SelectedRows.Count > 0)
@@ -132,33 +143,29 @@ namespace Uygulama_1
                 {
                     // Seçilen satırın Randevu türünde bir öğe olduğundan emin olduk
                     // Şimdi secilenRandevu değişkeni, seçilen Randevu öğesini temsil ediyor
-                    // Bu öğeyi kullanabilirsiniz
+                    // Bu öğeyi kullanabiliriz
                     if (list.Contains(secilenRandevu))
                     {
+                        // Secilen öğeyi listeden sil
                         list.Remove(secilenRandevu);
-                        // Secilen öğe listeden silindi.
+                        
                     }
                 }
             }
-
-
             dataGridView.DataSource = list.ToList();
-
+            temizle();
         }
-
         private void güncelleBtn_Click(object sender, EventArgs e)
         {
             if (dataGridView.SelectedRows.Count > 0)
             {
-                // Seçili satır varsa, bu satırdan ilgili veriyi alabiliriz
+                // Aynı Şekilde Sil'deki gibi
                 DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
-
-                // DataGridView'de sakladığınız nesne türüne (Randevu) dönüştürme işlemi yapabiliriz
                 Randevu secilenRandevu = selectedRow.DataBoundItem as Randevu;
 
                 if (secilenRandevu != null)
                 {
-                    // Yeni değerleri kullanarak seçilen öğenin özelliklerini güncelleme
+                    // Yeni değerleri kullanarak seçilen öğenin özelliklerini güncelle
                     int id = Convert.ToInt32(protokolNoTxt.Text);
                     string ad = adSoyadTxt.Text;
                     string telefon = telefonTxt.Text;
@@ -177,14 +184,19 @@ namespace Uygulama_1
                     dataGridView.DataSource = list;
                 }
             }
+            temizle();
         }
 
+        // TextBox'ları Temizle
         private void temizleBtn_Click(object sender, EventArgs e)
         {
             temizle();
         }
+
+        // Textbox'ları temizleme metodu
         private void temizle()
         {
+            //Text'boxları ve diğerlerini temizle
             protokolNoTxt.Text = null;
             adSoyadTxt.Text = null;
             telefonTxt.Text = null;
@@ -193,6 +205,7 @@ namespace Uygulama_1
             tarihDt.Value = DateTime.Today;
         }
 
+        //DataGridViewin üstüne tıklandığında yapılacaklar
         private void dataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             // Tıklanan sütunu al
@@ -209,6 +222,7 @@ namespace Uygulama_1
             }
         }
 
+        //  Randevu ara
         private void araBtn_Click(object sender, EventArgs e)
         {
             // Arama metnini al
@@ -225,24 +239,29 @@ namespace Uygulama_1
                 }
                 else
                 {
-                    // Arama metni boş ise, tüm verileri göster
+                    // Arama metni boş ise tüm verileri göster
                     dataGridView.DataSource = list.ToList();
                     temizle();
-                MessageBox.Show("Bu Protokol nuumarasına ait bir kayıt bulunamadı!");
+                    MessageBox.Show("Bu Protokol nuumarasına ait bir kayıt bulunamadı!");
             }
         }
 
+        //Tüm veriyi göster
         private void tümVeriBtn_Click(object sender, EventArgs e)
         {
             dataGridView.DataSource = list.ToList();
             aramaTxtBox.Clear();
             temizle();
         }
+
+        //Github Profil Linki :)
         private void githubProfile_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/kadircangeyik/");
             
         }
+
+        //Linkedin Profil Linki :)
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://www.linkedin.com/in/kadir-can-geyik-a149861a2/");
