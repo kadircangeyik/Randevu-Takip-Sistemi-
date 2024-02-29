@@ -42,7 +42,7 @@ namespace Uygulama_1
             list.Add(new Randevu(44356122, "Burak Sakman", "55569586", new DateTime(2024, 1, 18), false, "Göz"));
             list.Add(new Randevu(54563534, "Büsra Yurt", "50565849", new DateTime(2024, 4, 15), true, "Cilt"));
             list.Add(new Randevu(66787876, "Betül Karlı", "55487525", new DateTime(2021, 5, 19), true, "Dahiliye"));
-            list.Add(new Randevu(73485645, "Serap Geyik", "55265585", new DateTime(2023, 6, 27), true, "Kulak-Burun-Boğaz"));
+            list.Add(new Randevu(73485645, "Mehmet Akif", "55265585", new DateTime(2023, 6, 27), true, "Kulak-Burun-Boğaz"));
             list.Add(new Randevu(85464562, "Hasan Uzun", "53165885", new DateTime(2023, 9, 7), true, "Cilt"));
             list.Add(new Randevu(94569056, "Diyar Tekin", "53695575", new DateTime(2023, 11, 5), false, "Gastroenteroloji"));
             list.Add(new Randevu(14354535, "Ömer Fasıl", "55113551", new DateTime(2023, 8, 30), true, "Kulak-Burun-Boğaz"));
