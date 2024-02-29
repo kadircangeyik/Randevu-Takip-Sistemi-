@@ -30,33 +30,43 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(randevuTakip));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.temizleBtn = new System.Windows.Forms.Button();
+            this.güncelleBtn = new System.Windows.Forms.Button();
+            this.silBtn = new System.Windows.Forms.Button();
+            this.ekleBtn = new System.Windows.Forms.Button();
+            this.tarihDt = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.polikliniklerTxt = new System.Windows.Forms.ComboBox();
+            this.telefonTxt = new System.Windows.Forms.TextBox();
+            this.adSoyadTxt = new System.Windows.Forms.TextBox();
+            this.protokolNoTxt = new System.Windows.Forms.TextBox();
+            this.sigortaCheck = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Azure;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.temizleBtn);
+            this.panel1.Controls.Add(this.güncelleBtn);
+            this.panel1.Controls.Add(this.silBtn);
+            this.panel1.Controls.Add(this.ekleBtn);
+            this.panel1.Controls.Add(this.tarihDt);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.polikliniklerTxt);
+            this.panel1.Controls.Add(this.telefonTxt);
+            this.panel1.Controls.Add(this.adSoyadTxt);
+            this.panel1.Controls.Add(this.protokolNoTxt);
+            this.panel1.Controls.Add(this.sigortaCheck);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -64,40 +74,119 @@
             this.panel1.ForeColor = System.Drawing.Color.DarkMagenta;
             this.panel1.Location = new System.Drawing.Point(31, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1107, 264);
+            this.panel1.Size = new System.Drawing.Size(1107, 239);
             this.panel1.TabIndex = 1;
             // 
-            // textBox4
+            // temizleBtn
             // 
-            this.textBox4.Location = new System.Drawing.Point(166, 156);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(190, 22);
-            this.textBox4.TabIndex = 8;
+            this.temizleBtn.BackColor = System.Drawing.Color.Cyan;
+            this.temizleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.temizleBtn.ForeColor = System.Drawing.Color.Black;
+            this.temizleBtn.Location = new System.Drawing.Point(195, 194);
+            this.temizleBtn.Name = "temizleBtn";
+            this.temizleBtn.Size = new System.Drawing.Size(120, 38);
+            this.temizleBtn.TabIndex = 15;
+            this.temizleBtn.Text = "TEMİZLE";
+            this.temizleBtn.UseVisualStyleBackColor = false;
+            this.temizleBtn.Click += new System.EventHandler(this.temizleBtn_Click);
             // 
-            // textBox3
+            // güncelleBtn
             // 
-            this.textBox3.Location = new System.Drawing.Point(166, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(190, 22);
-            this.textBox3.TabIndex = 7;
+            this.güncelleBtn.BackColor = System.Drawing.Color.Yellow;
+            this.güncelleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.güncelleBtn.ForeColor = System.Drawing.Color.Black;
+            this.güncelleBtn.Location = new System.Drawing.Point(548, 186);
+            this.güncelleBtn.Name = "güncelleBtn";
+            this.güncelleBtn.Size = new System.Drawing.Size(120, 38);
+            this.güncelleBtn.TabIndex = 14;
+            this.güncelleBtn.Text = "GÜNCELLE";
+            this.güncelleBtn.UseVisualStyleBackColor = false;
+            this.güncelleBtn.Click += new System.EventHandler(this.güncelleBtn_Click);
             // 
-            // textBox1
+            // silBtn
             // 
-            this.textBox1.Location = new System.Drawing.Point(166, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 22);
-            this.textBox1.TabIndex = 5;
+            this.silBtn.BackColor = System.Drawing.Color.Tomato;
+            this.silBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.silBtn.ForeColor = System.Drawing.Color.Black;
+            this.silBtn.Location = new System.Drawing.Point(548, 135);
+            this.silBtn.Name = "silBtn";
+            this.silBtn.Size = new System.Drawing.Size(120, 38);
+            this.silBtn.TabIndex = 13;
+            this.silBtn.Text = "SİL";
+            this.silBtn.UseVisualStyleBackColor = false;
+            this.silBtn.Click += new System.EventHandler(this.silBtn_Click);
             // 
-            // checkBox1
+            // ekleBtn
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.Color.Black;
-            this.checkBox1.Location = new System.Drawing.Point(166, 204);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(89, 20);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "SIGORTA";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ekleBtn.BackColor = System.Drawing.Color.GreenYellow;
+            this.ekleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ekleBtn.ForeColor = System.Drawing.Color.Black;
+            this.ekleBtn.Location = new System.Drawing.Point(548, 86);
+            this.ekleBtn.Name = "ekleBtn";
+            this.ekleBtn.Size = new System.Drawing.Size(120, 38);
+            this.ekleBtn.TabIndex = 12;
+            this.ekleBtn.Text = "EKLE";
+            this.ekleBtn.UseVisualStyleBackColor = false;
+            this.ekleBtn.Click += new System.EventHandler(this.ekleBtn_Click);
+            // 
+            // tarihDt
+            // 
+            this.tarihDt.Location = new System.Drawing.Point(504, 47);
+            this.tarihDt.Name = "tarihDt";
+            this.tarihDt.Size = new System.Drawing.Size(215, 22);
+            this.tarihDt.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(432, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 17);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "TARIH :";
+            // 
+            // polikliniklerTxt
+            // 
+            this.polikliniklerTxt.FormattingEnabled = true;
+            this.polikliniklerTxt.Location = new System.Drawing.Point(166, 84);
+            this.polikliniklerTxt.Name = "polikliniklerTxt";
+            this.polikliniklerTxt.Size = new System.Drawing.Size(190, 24);
+            this.polikliniklerTxt.TabIndex = 9;
+            // 
+            // telefonTxt
+            // 
+            this.telefonTxt.Location = new System.Drawing.Point(166, 156);
+            this.telefonTxt.Name = "telefonTxt";
+            this.telefonTxt.Size = new System.Drawing.Size(190, 22);
+            this.telefonTxt.TabIndex = 8;
+            // 
+            // adSoyadTxt
+            // 
+            this.adSoyadTxt.Location = new System.Drawing.Point(166, 119);
+            this.adSoyadTxt.Name = "adSoyadTxt";
+            this.adSoyadTxt.Size = new System.Drawing.Size(190, 22);
+            this.adSoyadTxt.TabIndex = 7;
+            // 
+            // protokolNoTxt
+            // 
+            this.protokolNoTxt.Location = new System.Drawing.Point(166, 49);
+            this.protokolNoTxt.Name = "protokolNoTxt";
+            this.protokolNoTxt.ReadOnly = true;
+            this.protokolNoTxt.Size = new System.Drawing.Size(190, 22);
+            this.protokolNoTxt.TabIndex = 5;
+            // 
+            // sigortaCheck
+            // 
+            this.sigortaCheck.AutoSize = true;
+            this.sigortaCheck.ForeColor = System.Drawing.Color.Black;
+            this.sigortaCheck.Location = new System.Drawing.Point(77, 204);
+            this.sigortaCheck.Name = "sigortaCheck";
+            this.sigortaCheck.Size = new System.Drawing.Size(89, 20);
+            this.sigortaCheck.TabIndex = 4;
+            this.sigortaCheck.Text = "SIGORTA";
+            this.sigortaCheck.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -139,9 +228,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(35, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 17);
+            this.label1.Size = new System.Drawing.Size(131, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "PROTOKOL ID :";
+            this.label1.Text = "PROTOKOL NO :";
             // 
             // label2
             // 
@@ -155,41 +244,22 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Randevu Bilgileri";
             // 
-            // comboBox1
+            // dataGridView
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(166, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 24);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(432, 49);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 17);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "TARIH :";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(504, 47);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(215, 22);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
-            // button1
-            // 
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(504, 163);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 61);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(31, 287);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView.Size = new System.Drawing.Size(1107, 308);
+            this.dataGridView.TabIndex = 3;
+            this.dataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEnter);
             // 
             // randevuTakip
             // 
@@ -197,14 +267,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1173, 607);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "randevuTakip";
             this.Text = "RANDEVU TAKİP SİSTEMİ";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.randevuTakip_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,14 +290,18 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox telefonTxt;
+        private System.Windows.Forms.TextBox adSoyadTxt;
+        private System.Windows.Forms.TextBox protokolNoTxt;
+        private System.Windows.Forms.CheckBox sigortaCheck;
+        private System.Windows.Forms.Button ekleBtn;
+        private System.Windows.Forms.DateTimePicker tarihDt;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox polikliniklerTxt;
+        private System.Windows.Forms.Button güncelleBtn;
+        private System.Windows.Forms.Button silBtn;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button temizleBtn;
     }
 }
 
