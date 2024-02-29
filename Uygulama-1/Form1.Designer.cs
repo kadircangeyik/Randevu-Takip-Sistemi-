@@ -385,7 +385,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "randevuTakip";
             this.Text = "RANDEVU TAKİP SİSTEMİ";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.randevuTakip_Load);
             this.randevuPanel.ResumeLayout(false);
