@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(randevuTakip));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.randevuPanel = new System.Windows.Forms.Panel();
+            this.tümVeriBtn = new System.Windows.Forms.Button();
             this.araBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.aramaTxtBox = new System.Windows.Forms.TextBox();
-            this.sirala = new System.Windows.Forms.ComboBox();
             this.temizleBtn = new System.Windows.Forms.Button();
             this.güncelleBtn = new System.Windows.Forms.Button();
             this.silBtn = new System.Windows.Forms.Button();
@@ -51,41 +51,63 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.tümVeriBtn = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.githubProfile = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.github = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.randevuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.github)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // randevuPanel
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.randevuPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Azure;
-            this.panel1.Controls.Add(this.tümVeriBtn);
-            this.panel1.Controls.Add(this.araBtn);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.aramaTxtBox);
-            this.panel1.Controls.Add(this.sirala);
-            this.panel1.Controls.Add(this.temizleBtn);
-            this.panel1.Controls.Add(this.güncelleBtn);
-            this.panel1.Controls.Add(this.silBtn);
-            this.panel1.Controls.Add(this.ekleBtn);
-            this.panel1.Controls.Add(this.tarihDt);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.polikliniklerTxt);
-            this.panel1.Controls.Add(this.telefonTxt);
-            this.panel1.Controls.Add(this.adSoyadTxt);
-            this.panel1.Controls.Add(this.protokolNoTxt);
-            this.panel1.Controls.Add(this.sigortaCheck);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.panel1.Location = new System.Drawing.Point(31, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1107, 239);
-            this.panel1.TabIndex = 1;
+            this.randevuPanel.AutoSize = true;
+            this.randevuPanel.BackColor = System.Drawing.Color.Azure;
+            this.randevuPanel.Controls.Add(this.linkLabel1);
+            this.randevuPanel.Controls.Add(this.pictureBox1);
+            this.randevuPanel.Controls.Add(this.githubProfile);
+            this.randevuPanel.Controls.Add(this.github);
+            this.randevuPanel.Controls.Add(this.tümVeriBtn);
+            this.randevuPanel.Controls.Add(this.araBtn);
+            this.randevuPanel.Controls.Add(this.label7);
+            this.randevuPanel.Controls.Add(this.aramaTxtBox);
+            this.randevuPanel.Controls.Add(this.temizleBtn);
+            this.randevuPanel.Controls.Add(this.güncelleBtn);
+            this.randevuPanel.Controls.Add(this.silBtn);
+            this.randevuPanel.Controls.Add(this.ekleBtn);
+            this.randevuPanel.Controls.Add(this.tarihDt);
+            this.randevuPanel.Controls.Add(this.label6);
+            this.randevuPanel.Controls.Add(this.polikliniklerTxt);
+            this.randevuPanel.Controls.Add(this.telefonTxt);
+            this.randevuPanel.Controls.Add(this.adSoyadTxt);
+            this.randevuPanel.Controls.Add(this.protokolNoTxt);
+            this.randevuPanel.Controls.Add(this.sigortaCheck);
+            this.randevuPanel.Controls.Add(this.label5);
+            this.randevuPanel.Controls.Add(this.label4);
+            this.randevuPanel.Controls.Add(this.label3);
+            this.randevuPanel.Controls.Add(this.label1);
+            this.randevuPanel.ForeColor = System.Drawing.Color.DarkMagenta;
+            this.randevuPanel.Location = new System.Drawing.Point(31, 42);
+            this.randevuPanel.Name = "randevuPanel";
+            this.randevuPanel.Size = new System.Drawing.Size(1197, 239);
+            this.randevuPanel.TabIndex = 1;
+            // 
+            // tümVeriBtn
+            // 
+            this.tümVeriBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.tümVeriBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tümVeriBtn.ForeColor = System.Drawing.Color.Black;
+            this.tümVeriBtn.Location = new System.Drawing.Point(913, 135);
+            this.tümVeriBtn.Name = "tümVeriBtn";
+            this.tümVeriBtn.Size = new System.Drawing.Size(120, 38);
+            this.tümVeriBtn.TabIndex = 19;
+            this.tümVeriBtn.Text = "TÜMÜ";
+            this.tümVeriBtn.UseVisualStyleBackColor = false;
+            this.tümVeriBtn.Click += new System.EventHandler(this.tümVeriBtn_Click);
             // 
             // araBtn
             // 
@@ -117,16 +139,6 @@
             this.aramaTxtBox.Name = "aramaTxtBox";
             this.aramaTxtBox.Size = new System.Drawing.Size(157, 22);
             this.aramaTxtBox.TabIndex = 16;
-            // 
-            // sirala
-            // 
-            this.sirala.FormattingEnabled = true;
-            this.sirala.Items.AddRange(new object[] {
-            "A\'dan Z\'ye"});
-            this.sirala.Location = new System.Drawing.Point(377, 202);
-            this.sirala.Name = "sirala";
-            this.sirala.Size = new System.Drawing.Size(121, 24);
-            this.sirala.TabIndex = 4;
             // 
             // temizleBtn
             // 
@@ -308,48 +320,86 @@
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView.Size = new System.Drawing.Size(1107, 308);
+            this.dataGridView.Size = new System.Drawing.Size(716, 254);
             this.dataGridView.TabIndex = 3;
             this.dataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEnter);
             this.dataGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_ColumnHeaderMouseClick);
             // 
-            // tümVeriBtn
+            // githubProfile
             // 
-            this.tümVeriBtn.BackColor = System.Drawing.Color.IndianRed;
-            this.tümVeriBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tümVeriBtn.ForeColor = System.Drawing.Color.Black;
-            this.tümVeriBtn.Location = new System.Drawing.Point(913, 135);
-            this.tümVeriBtn.Name = "tümVeriBtn";
-            this.tümVeriBtn.Size = new System.Drawing.Size(120, 38);
-            this.tümVeriBtn.TabIndex = 19;
-            this.tümVeriBtn.Text = "TÜMÜ";
-            this.tümVeriBtn.UseVisualStyleBackColor = false;
-            this.tümVeriBtn.Click += new System.EventHandler(this.tümVeriBtn_Click);
+            this.githubProfile.AutoSize = true;
+            this.githubProfile.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.githubProfile.DisabledLinkColor = System.Drawing.Color.White;
+            this.githubProfile.LinkColor = System.Drawing.Color.Black;
+            this.githubProfile.Location = new System.Drawing.Point(1137, 82);
+            this.githubProfile.Name = "githubProfile";
+            this.githubProfile.Size = new System.Drawing.Size(51, 16);
+            this.githubProfile.TabIndex = 21;
+            this.githubProfile.TabStop = true;
+            this.githubProfile.Text = "GitHub ";
+            this.githubProfile.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.githubProfile_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Uygulama_1.Properties.Resources.linkedin;
+            this.pictureBox1.Location = new System.Drawing.Point(1098, 122);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
+            // github
+            // 
+            this.github.Image = global::Uygulama_1.Properties.Resources.github;
+            this.github.Location = new System.Drawing.Point(1098, 74);
+            this.github.Name = "github";
+            this.github.Size = new System.Drawing.Size(33, 32);
+            this.github.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.github.TabIndex = 20;
+            this.github.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.linkLabel1.DisabledLinkColor = System.Drawing.Color.White;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Location = new System.Drawing.Point(1137, 129);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(57, 16);
+            this.linkLabel1.TabIndex = 23;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "LinkedIn";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // randevuTakip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1173, 607);
+            this.ClientSize = new System.Drawing.Size(782, 553);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.randevuPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "randevuTakip";
             this.Text = "RANDEVU TAKİP SİSTEMİ";
             this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.randevuTakip_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.randevuPanel.ResumeLayout(false);
+            this.randevuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.github)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel randevuPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
@@ -367,11 +417,14 @@
         private System.Windows.Forms.Button silBtn;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button temizleBtn;
-        private System.Windows.Forms.ComboBox sirala;
         private System.Windows.Forms.Button araBtn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox aramaTxtBox;
         private System.Windows.Forms.Button tümVeriBtn;
+        private System.Windows.Forms.PictureBox github;
+        private System.Windows.Forms.LinkLabel githubProfile;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

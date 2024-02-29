@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,23 +48,18 @@ namespace Uygulama_1
             list.Add(new Randevu(42345436, "Kadir Toprak", "53334455", new DateTime(2023, 12, 5), false, "Üroloji"));
             list.Add(new Randevu(64385834, "Şeyma Karadeniz", "54445566", new DateTime(2023, 12, 6), true, "Psikiyatri"));
             list.Add(new Randevu(94368345, "Cemal Yıldırım", "55556677", new DateTime(2023, 12, 7), true, "Plastik Cerrahi"));
-
-            
+    
             // DataGridView için otomatik boyutlandırma modunu ayarla
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-           
             // Sütunları yeniden boyutlandırılabilir yap
-           
+
             dataGridView.DataSource = list.ToList();
             foreach (DataGridViewColumn column in dataGridView.Columns)
             {
                 column.Resizable = DataGridViewTriState.True;
             }
-            
             temizle();
-
         }
-        
         private void dataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -82,7 +79,7 @@ namespace Uygulama_1
 
         }
 
-       
+
         private void ekleBtn_Click(object sender, EventArgs e)
         {
             string ad = adSoyadTxt.Text;
@@ -95,22 +92,30 @@ namespace Uygulama_1
             Random random = new Random();
             int id = random.Next(10000000, 99999999);
 
-             // Yeni randevu oluştur
-             Randevu yeniRandevu = new Randevu(id, ad, telefon, tarih, sigorta, poliklinik);
+            // Yeni randevu oluştur
+            Randevu yeniRandevu = new Randevu(id, ad, telefon, tarih, sigorta, poliklinik);
 
-             // Ekleme öncesinde mevcut veri kümesinde aynı id'ye sahip bir randevu var mı kontrol et
-            if (list.Any(r =>r.Telefon == telefon && r.Ad == ad && r.Poliklinik == poliklinik))
+            // Ekleme öncesinde mevcut veri kümesinde aynı id'ye sahip bir randevu var mı kontrol et
+            if (list.Any(r => r.Telefon == telefon && r.Ad == ad && r.Poliklinik == poliklinik))
             {
-              MessageBox.Show("Bu ID'ye sahip bir randevu zaten mevcut!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bu protokol numarasına sahip bir kayıt zaten mevcut!", "İstenilen Kayıt Eklenmedi !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-              // Veri kümesine ekle
-              list.Add(yeniRandevu);
-              dataGridView.DataSource = list.ToList();
-              temizle();
-    }
-}
+                // Veri kümesine ekle
+                list.Insert(0, yeniRandevu); // En üste eklemek için Insert kullanılır
+
+                dataGridView.DataSource = list.ToList();
+
+                // Eklenen veriyi seç
+                dataGridView.Rows[0].Selected = true;
+
+                MessageBox.Show(ad + " isimli kişinin kaydı eklenmiştir!");
+
+                temizle();
+            }
+        }
+
 
 
         private void silBtn_Click(object sender, EventArgs e)
@@ -222,7 +227,9 @@ namespace Uygulama_1
                 {
                     // Arama metni boş ise, tüm verileri göster
                     dataGridView.DataSource = list.ToList();
-                }
+                    temizle();
+                MessageBox.Show("Bu Protokol nuumarasına ait bir kayıt bulunamadı!");
+            }
         }
 
         private void tümVeriBtn_Click(object sender, EventArgs e)
@@ -230,6 +237,15 @@ namespace Uygulama_1
             dataGridView.DataSource = list.ToList();
             aramaTxtBox.Clear();
             temizle();
+        }
+        private void githubProfile_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/kadircangeyik/");
+            
+        }
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://www.linkedin.com/in/kadir-can-geyik-a149861a2/");
         }
     }
 }
