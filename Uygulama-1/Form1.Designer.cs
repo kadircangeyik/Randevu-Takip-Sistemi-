@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(randevuTakip));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.araBtn = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.aramaTxtBox = new System.Windows.Forms.TextBox();
+            this.sirala = new System.Windows.Forms.ComboBox();
             this.temizleBtn = new System.Windows.Forms.Button();
             this.güncelleBtn = new System.Windows.Forms.Button();
             this.silBtn = new System.Windows.Forms.Button();
@@ -47,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.tümVeriBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +61,11 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Azure;
+            this.panel1.Controls.Add(this.tümVeriBtn);
+            this.panel1.Controls.Add(this.araBtn);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.aramaTxtBox);
+            this.panel1.Controls.Add(this.sirala);
             this.panel1.Controls.Add(this.temizleBtn);
             this.panel1.Controls.Add(this.güncelleBtn);
             this.panel1.Controls.Add(this.silBtn);
@@ -76,6 +86,47 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1107, 239);
             this.panel1.TabIndex = 1;
+            // 
+            // araBtn
+            // 
+            this.araBtn.BackColor = System.Drawing.Color.Thistle;
+            this.araBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.araBtn.ForeColor = System.Drawing.Color.Black;
+            this.araBtn.Location = new System.Drawing.Point(913, 86);
+            this.araBtn.Name = "araBtn";
+            this.araBtn.Size = new System.Drawing.Size(120, 38);
+            this.araBtn.TabIndex = 18;
+            this.araBtn.Text = "BUL";
+            this.araBtn.UseVisualStyleBackColor = false;
+            this.araBtn.Click += new System.EventHandler(this.araBtn_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(759, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(131, 17);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "PROTOKOL NO :";
+            // 
+            // aramaTxtBox
+            // 
+            this.aramaTxtBox.Location = new System.Drawing.Point(892, 46);
+            this.aramaTxtBox.Name = "aramaTxtBox";
+            this.aramaTxtBox.Size = new System.Drawing.Size(157, 22);
+            this.aramaTxtBox.TabIndex = 16;
+            // 
+            // sirala
+            // 
+            this.sirala.FormattingEnabled = true;
+            this.sirala.Items.AddRange(new object[] {
+            "A\'dan Z\'ye"});
+            this.sirala.Location = new System.Drawing.Point(377, 202);
+            this.sirala.Name = "sirala";
+            this.sirala.Size = new System.Drawing.Size(121, 24);
+            this.sirala.TabIndex = 4;
             // 
             // temizleBtn
             // 
@@ -260,6 +311,20 @@
             this.dataGridView.Size = new System.Drawing.Size(1107, 308);
             this.dataGridView.TabIndex = 3;
             this.dataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEnter);
+            this.dataGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_ColumnHeaderMouseClick);
+            // 
+            // tümVeriBtn
+            // 
+            this.tümVeriBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.tümVeriBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tümVeriBtn.ForeColor = System.Drawing.Color.Black;
+            this.tümVeriBtn.Location = new System.Drawing.Point(913, 135);
+            this.tümVeriBtn.Name = "tümVeriBtn";
+            this.tümVeriBtn.Size = new System.Drawing.Size(120, 38);
+            this.tümVeriBtn.TabIndex = 19;
+            this.tümVeriBtn.Text = "TÜMÜ";
+            this.tümVeriBtn.UseVisualStyleBackColor = false;
+            this.tümVeriBtn.Click += new System.EventHandler(this.tümVeriBtn_Click);
             // 
             // randevuTakip
             // 
@@ -302,6 +367,11 @@
         private System.Windows.Forms.Button silBtn;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button temizleBtn;
+        private System.Windows.Forms.ComboBox sirala;
+        private System.Windows.Forms.Button araBtn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox aramaTxtBox;
+        private System.Windows.Forms.Button tümVeriBtn;
     }
 }
 

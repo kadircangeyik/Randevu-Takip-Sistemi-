@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Uygulama_1
 {
@@ -46,18 +47,20 @@ namespace Uygulama_1
             list.Add(new Randevu(64385834, "Şeyma Karadeniz", "54445566", new DateTime(2023, 12, 6), true, "Psikiyatri"));
             list.Add(new Randevu(94368345, "Cemal Yıldırım", "55556677", new DateTime(2023, 12, 7), true, "Plastik Cerrahi"));
 
-
+            
             // DataGridView için otomatik boyutlandırma modunu ayarla
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+           
             // Sütunları yeniden boyutlandırılabilir yap
+           
+            dataGridView.DataSource = list.ToList();
             foreach (DataGridViewColumn column in dataGridView.Columns)
             {
                 column.Resizable = DataGridViewTriState.True;
             }
-            dataGridView.DataSource = list.ToList();
-
+            
             temizle();
+
         }
         
         private void dataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -183,6 +186,50 @@ namespace Uygulama_1
             polikliniklerTxt.Text = null;
             sigortaCheck.Checked = false;
             tarihDt.Value = DateTime.Today;
+        }
+
+        private void dataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // Tıklanan sütunu al
+            DataGridViewColumn clickedColumn = dataGridView.Columns[e.ColumnIndex];
+
+            // Tıklanan sütunun adını al
+            string columnName = clickedColumn.DataPropertyName;
+
+            // Veri kümesini tıklanan sütuna göre sırala
+            if (columnName != null)
+            {
+                
+                dataGridView.DataSource = list.OrderBy(x => x.GetType().GetProperty(columnName).GetValue(x, null)).ToList();
+            }
+        }
+
+        private void araBtn_Click(object sender, EventArgs e)
+        {
+            // Arama metnini al
+                string aramaMetni = aramaTxtBox.Text;
+
+                // Arama metninin boş olup olmadığını kontrol et
+                if (!string.IsNullOrWhiteSpace(aramaMetni))
+                {
+                    // Protokol numarasına göre veri ara
+                    var arananRandevular = list.Where(r => r.Id.ToString().Contains(aramaMetni)).ToList();
+
+                    // Bulunan verileri DataGridView'e yükle
+                    dataGridView.DataSource = arananRandevular;
+                }
+                else
+                {
+                    // Arama metni boş ise, tüm verileri göster
+                    dataGridView.DataSource = list.ToList();
+                }
+        }
+
+        private void tümVeriBtn_Click(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = list.ToList();
+            aramaTxtBox.Clear();
+            temizle();
         }
     }
 }
